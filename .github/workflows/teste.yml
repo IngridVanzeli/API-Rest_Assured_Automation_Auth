@@ -8,7 +8,7 @@ on:
 
 jobs:
   run-tests:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
@@ -20,10 +20,8 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
-      - name: Set up Maven
-        run: |
-          mvn --version
+      - name: Verificar versão do Maven
+        run: mvn --version
 
-      - name: Build and Run Tests
-        run: |
-          mvn -Dtest=teste test
+      - name: Build e executar testes
+        run: mvn test
